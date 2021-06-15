@@ -83,8 +83,10 @@ def main():
             
             cv2.rectangle(frame,(xmin, ymin),(xmax, ymax),(0,255,0),3)
             cv2.putText(frame,labels[int(result['class_id'])],(xmin, min(ymax, CAMERA_HEIGHT-20)), cv2.FONT_HERSHEY_SIMPLEX, 0.5,(255,255,255),2,cv2.LINE_AA) 
+	    cv2.imwrite('image.png',image)	
+	    length = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))	
             cap.release()
- 
+ 		
 
 def exitProgram():
 	print("Exit Button pressed")
@@ -98,26 +100,13 @@ exitButton.pack(side=tk.BOTTOM)
 
 
 global image 
-global pic
 
 def change_pic():
     main()
     time.sleep(2)
-    label.configure(image = win.photo0)
-    text.configure(text = "Total Cell Count = 7")
-    Next.configure(command = change_pic1)
+    label.configure(image = win.photo_end)
+    text.configure(text = "Total Cell Count = %" % lenght)
 
-def change_pic1():
-    main()
-    time.sleep(4)
-    label.configure(image = win.photo1)
-    text.configure(text = "Total Cell Count = 10")
-    Next.configure(command = change_pic2)
-def change_pic2():
-    main()
-    time.sleep(2)
-    label.configure(image = win.photo2)
-    text.configure(text = "Total Cell Count = 6")
 
 Next = tk.Button(win, text = "Capture", font = myFont, command = change_pic, height =1 , width = 24)
 Next.pack()
@@ -125,24 +114,17 @@ Next.pack()
 text = tk.Label(win, text= "Total Cell Count = 0", font=('Mistral 18 bold'))
 text.pack()
 
-photo = '/home/pi/Desktop/coco/TFODRPi/start.jpg'
-photo0 = '/home/pi/Desktop/coco/TFODRPi/model0.jpg'
-photo1 = '/home/pi/Desktop/coco/TFODRPi/model1.jpg'
-photo2 = '/home/pi/Desktop/coco/TFODRPi/model2.jpg'
-photo3 = '/home/pi/Desktop/coco/TFODRPi/back.jpg'
+photo = 'start.jpg'
+photo_end = 'image.png'
+
 
 
 win.photo = ImageTk.PhotoImage(Image.open(photo))
-win.photo0 = ImageTk.PhotoImage(Image.open(photo0))
-win.photo1 = ImageTk.PhotoImage(Image.open(photo1))
-win.photo2 = ImageTk.PhotoImage(Image.open(photo2))
-win.photo3 = ImageTk.PhotoImage(Image.open(photo3))
+win.photo_end = ImageTk.PhotoImage(Image.open(photo_end))
 
 label = tk.Label(win, height =300 , width = 300, image = win.photo)
 label.pack()
 
-back = tk.Label(win, height =300 , width = 300, image = win.photo3)
-back.pack(side=tk.RIGHT)
   
 
 tk.mainloop()
