@@ -1,4 +1,7 @@
-# BactColonyCounter
+# Contador de Colonias Bacterianas
+
+"CENTRO DE ENSEÑANZA TECNICA INDUSTRIAL" PLANTEL COLOMOS
+
 Bacterial Colony Counter using Raspberry Pi and TensorFlow
 
 Proyecto Final 
@@ -16,3 +19,8 @@ Chasis elaborado en impresion 3D utilizando PLA. Los modelos de impresion se enc
 Modelo utilizado para el entrenamiento "SSD MobileNet V1 FPN 640x640".
 
 Lenguajes utilizados: Tk & Python 3.
+
+Colaboradores:
+-Ivan Alejandro Campos Gutierrez
+-Yanela Chaho Reynoso
+-Kevyn Carrillo Casillas
