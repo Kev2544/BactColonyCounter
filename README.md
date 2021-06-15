@@ -16,6 +16,8 @@ Lista de Hardware utilizado:
 
 Chasis elaborado en impresion 3D utilizando PLA. Los modelos de impresion se encuentran la carpeta 3D_Case_Models.
 
+Version de Tensor Flow utilizada: 2.5
+Gpu: GTX 1050 TI
 Modelo utilizado para el entrenamiento "SSD MobileNet V1 FPN 640x640".
 
 Lenguajes utilizados: Tk & Python 3.
